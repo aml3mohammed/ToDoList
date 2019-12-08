@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { map, filter, get } from 'lodash';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import './DisplayState.css';
 
 
 class DisplayState extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            "clicked": false
-        }
-      }
+    // constructor(props) {
+    //     super(props)
+    //     this.state = {
+    //         "clicked": false
+    //     }
+    // }
 
     render() {
         return (
@@ -22,7 +27,23 @@ class DisplayState extends Component {
                 (info) => {
                     return(
                         <div>
-                        <br/>
+                            <ExpansionPanel>
+                                <ExpansionPanelSummary
+                                    expandIcon={<ExpandMoreIcon />}
+                                    aria-controls="panel1a-content"
+                                >
+                                    <Typography>
+                                        {info.title}
+                                    </Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails>
+                                    <Typography>
+                                        {this.props.children.subData && <DisplayState children={this.props.children.subData} data={this.props.data} filter={info.id}/>} 
+                                    </Typography>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+                    
+                        {/* <br/>
                         <li 
                             onClick={
                             ()=>{this.setState({"clicked": !this.state.clicked})}
@@ -30,7 +51,7 @@ class DisplayState extends Component {
                         >
                             {info.title}
                         </li>
-                        {this.props.children.subData && this.state.clicked && <DisplayState children={this.props.children.subData} data={this.props.data} filter={info.id}/>}
+                        {this.props.children.subData && this.state.clicked && <DisplayState children={this.props.children.subData} data={this.props.data} filter={info.id}/>} */}
                         </div>
                     )
                 }
@@ -38,52 +59,6 @@ class DisplayState extends Component {
         )
     }
 }
-
-// class DisplayState extends Component {
-//     render() {
-//         // console.log(this.props.data)
-//         return (
-//             <table border="2">
-//                 <tr>
-//                     <th>Users</th>
-//                     <th>Tasks</th>
-//                 </tr>
-                
-//                 {
-//                    map(this.props.data.users, (user) => {
-//                     // console.log(this.props.data.tasks)
-
-//                        return(
-//                             <tr>
-//                                 <td>{user.title}</td>
-//                                 <td>
-//                                     {
-//                                         map(filter(this.props.data.tasks, {"parentId": user.id}), 
-//                                         (task) => {
-//                                             return(
-//                                                 <tr><td>{task.title}</td>
-//                                                 {   
-//                                                     map(filter(this.props.data.subTasks, {"parentId": task.id}), 
-//                                                     (subTask) => {
-//                                                         return(
-//                                                             <tr><td>{subTask.title}</td></tr>
-//                                                         )
-//                                                     })
-//                                                 }
-//                                                 </tr>
-//                                             )
-//                                         })
-//                                     }
-//                                 </td>
-//                             </tr>
-//                        )
-//                    }) 
-//                 }
-                
-//             </table>
-//         )
-//     }
-// }
 
 
 const mapStateToProps = state => {
