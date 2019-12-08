@@ -1,0 +1,43 @@
+{
+
+    "title":
+    {
+        "type": "text",
+        "id": "title",
+        "name": "title",
+        "placeholder": "Add task title",
+        "comp": "TextBox"
+    },
+    "description":
+    {
+        "type": "textarea",
+        "cols": "30",
+        "rows": "5",
+        "id": "description",
+        "name": "description",
+        "placeholder": "Add task description",
+        "comp": "TextArea"
+    },
+    "done":
+    {
+        "type": "checkbox",
+        "id": "done",
+        "name": "done",
+        "comp": "CheckBox"
+    },
+    "users":
+    {
+        "type": "select",
+        "id": "users",
+        "name": "users",
+        "comp": "Select"
+    },
+    "tasks":
+    {
+        "type": "select",
+        "id": "tasks",
+        "name": "tasks",
+        "comp": "Select"
+    }
+
+}
