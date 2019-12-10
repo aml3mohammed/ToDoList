@@ -29,12 +29,8 @@ const table = {
 
 }
 
-if(gun.get('data').get('users').once())
-    gun.get('data').get('users').put(null)
-export const data = gun.get('data').put(table)
-// var data1
-// if(!gun.get('data').get('users').once())
-//     data1 = gun.get('data').put(table)
-//     // gun.get('data').get('users').put(null)
-
-// export const data = data1
+export const data = gun.get('data').once(obj => {
+    if(!obj){
+        return gun.get('data').put(table)
+    }
+})
