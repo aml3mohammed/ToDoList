@@ -1,14 +1,13 @@
-import { ADD_TASK } from '../types/types';
-import uuid from 'uuid/v4';
-
+import { ADD_TASK } from "../types/types";
+import uuid from "uuid/v4";
 
 export const addTask = (id, newTask, description, done) => {
-  return{
+  return {
     type: ADD_TASK,
     payload: newTask,
-    id, 
+    id,
     description,
     done,
-    newID:uuid()
-  }
-}
+    newID: uuid()
+  };
+};

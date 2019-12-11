@@ -1,3 +1,1 @@
-
-
-export const reducerNames = ["users", "tasks", "subTasks"]
+export const reducerNames = ["users", "tasks", "subTasks"];

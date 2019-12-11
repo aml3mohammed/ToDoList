@@ -1,11 +1,13 @@
-import React from 'react';
-import FieldCreator from './inputFields/FieldCreator';
+import React from "react";
+import FieldCreator from "./inputFields/FieldCreator";
 
- 
 export default class Controller extends React.Component {
-    render() {
-        return(
-            <FieldCreator fields={this.props.fields} stateData={this.props.stateData}/>
-        )
-    }
+  render() {
+    return (
+      <FieldCreator
+        fields={this.props.fields}
+        stateData={this.props.stateData}
+      />
+    );
+  }
 }

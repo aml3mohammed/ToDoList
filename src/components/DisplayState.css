@@ -1,9 +1,8 @@
 li:hover {
-    cursor: pointer;
-    margin: 35px;
+  cursor: pointer;
+  margin: 35px;
 }
-li{
-    display: inline;
-    font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+li {
+  display: inline;
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
 }
-
