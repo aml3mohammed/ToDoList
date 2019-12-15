@@ -1,9 +1,7 @@
-export const functions = taskid => ({
+export const functions = (path, params) => ({
   key: "filtering",
-  path: "subTasks",
-  params: {
-    parentId: taskid
-  },
+  path,
+  params,
   then: {
     key: "count",
     count_key: "",

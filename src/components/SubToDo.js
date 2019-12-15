@@ -11,7 +11,11 @@ import { updateGun } from "../reducers/updateGun";
 
 class SubToDo extends React.Component {
   render() {
-    let counter = apply(functions(this.props.id));
+    let counter = apply(
+      functions("subTasks", {
+        parentId: this.props.id
+      })
+    );
     return (
       <Formik
         initialValues={{
