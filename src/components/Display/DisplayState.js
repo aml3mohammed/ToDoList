@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { map, omit } from "lodash";
-import { apply } from "../apply/index";
-import { functions } from "../apply/functions";
+import { apply } from "../../apply/index";
+import { functions } from "../../apply/functions";
 import Item from "./Item";
-import "./DisplayState.css";
+import "../layout.css";
 
 export default class DisplayState extends Component {
   render() {
@@ -18,12 +18,13 @@ export default class DisplayState extends Component {
       ),
       info => {
         return (
-          <div>
+          <div className={this.props.className}>
             <Item
               DisplayState={
                 <DisplayState
                   children={this.props.children.subData}
                   filter={info.id}
+                  className="details"
                 />
               }
               info={info}

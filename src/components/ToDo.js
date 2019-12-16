@@ -4,11 +4,12 @@ import { connect } from "react-redux";
 import fields from "../fields/fields";
 import { omit } from "lodash";
 import Controller from "./index";
-import DisplayState from "./DisplayState";
+import DisplayState from "./Display/DisplayState";
 import ModalAndCount from "./ModalAndCount";
 import { globalDispatcher } from "../actions/globalDispatcher";
 import { updateGun } from "../reducers/updateGun";
 import { display } from "../display/display";
+import "./layout.css";
 
 let v;
 
@@ -37,11 +38,18 @@ class ToDo extends React.Component {
           render={props => (
             <div>
               <Form>
-                <Controller fields={omit(fields, "tasks")} stateData="users" />
-                <button type="submit">Add Task</button>
+                <div className="container">
+                  <Controller
+                    fields={omit(fields, "tasks")}
+                    stateData="users"
+                  />
+                </div>
                 <br />
+                <button type="submit">Add Task</button>
               </Form>
-              <ModalAndCount title={v} />
+              <div className="container">
+                <ModalAndCount title={v} />
+              </div>
               <DisplayState children={display} filter={true} />
             </div>
           )}

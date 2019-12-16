@@ -1,0 +1,50 @@
+.container {
+  height: 200px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: space-between;
+}
+
+.input {
+  width: 250px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-between;
+}
+
+.expandHeader {
+  height: 50px;
+  border-bottom: 1px double gray;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-around;
+  align-items: center;
+}
+
+.expand:hover {
+  cursor: pointer;
+}
+
+.collapse:hover {
+  cursor: pointer;
+}
+
+.collapse {
+  transform: rotate(180deg);
+}
+
+.edit {
+  height: 30px;
+  width: 50px;
+}
+
+.details {
+  height: auto;
+  width: 60%;
+  margin-left: 20%;
+}

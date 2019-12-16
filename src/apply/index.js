@@ -2,7 +2,6 @@ import * as Runfunctions from "./main";
 import { get } from "lodash";
 import store from "../store/store";
 
-// console.log(Runfunctions)
 export const apply = (
   params,
   data = {},

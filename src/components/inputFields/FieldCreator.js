@@ -2,6 +2,8 @@ import React from "react";
 import { Field } from "formik";
 import { get, map } from "lodash";
 import * as FormComponents from "./index";
+// import InputLayout from "../../_layouts/InputWrapper";
+import "../layout.css";
 
 export default class FieldCreator extends React.Component {
   render() {
@@ -13,7 +15,7 @@ export default class FieldCreator extends React.Component {
             let InputComponentName = get(input, "comp", "TextBox");
             let FieldComponent = get(FormComponents, InputComponentName);
             return (
-              <div>
+              <div className="input">
                 <label className="label">{input.name}</label>
                 <FieldComponent
                   {...props}
