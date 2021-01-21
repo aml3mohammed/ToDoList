@@ -10,7 +10,7 @@
     "formik-antd": "^1.6.0",
     "gun": "^0.2019.1120",
     "history": "^4.10.1",
-    "immer": "^5.0.0",
+    "immer": "^8.0.1",
     "lodash": "^4.17.15",
     "material-ui-icons": "^1.0.0-beta.36",
     "normalizr": "^3.4.1",
